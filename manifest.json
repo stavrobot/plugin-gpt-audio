@@ -9,6 +9,10 @@
     "voice": {
       "description": "TTS voice to use (e.g. alloy, ash, ballad, coral, echo, fable, nova, onyx, sage, shimmer).",
       "required": true
+    },
+    "instructions": {
+      "description": "Instructions for the TTS model on how to speak (e.g. tone, pacing, emotion).",
+      "required": false
     }
   }
 }

@@ -33,18 +33,22 @@ def main() -> None:
     api_key = config["api_key"]
     voice = config["voice"]
 
+    request_body: dict[str, str] = {
+        "model": "gpt-4o-mini-tts",
+        "voice": voice,
+        "input": params["text"],
+        "response_format": "mp3",
+    }
+    if config.get("instructions"):
+        request_body["instructions"] = config["instructions"]
+
     response = requests.post(
         "https://api.openai.com/v1/audio/speech",
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
         },
-        json={
-            "model": "tts-1",
-            "voice": voice,
-            "input": params["text"],
-            "response_format": "mp3",
-        },
+        json=request_body,
     )
 
     if not response.ok:
