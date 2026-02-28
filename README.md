@@ -4,11 +4,7 @@ Converts text to speech audio using OpenAI's TTS API and returns an MP3 file.
 
 ## Installation
 
-Install via the Stavrobot plugin system using the repository URL:
-
-```
-https://github.com/stavrobot/plugin-gpt-tts
-```
+Ask the bot to install the plugin from `https://github.com/stavrobot/plugin-gpt-tts`.
 
 ## Configuration
 
