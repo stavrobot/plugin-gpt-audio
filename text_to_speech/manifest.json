@@ -6,6 +6,10 @@
     "text": {
       "type": "string",
       "description": "The text to convert to speech."
+    },
+    "instructions": {
+      "type": "string",
+      "description": "Instructions for the TTS model on how to speak (e.g. tone, pacing, emotion)."
     }
   }
 }

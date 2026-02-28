@@ -10,7 +10,7 @@ from pathlib import Path
 import requests
 
 
-KNOWN_PARAMS = {"text"}
+KNOWN_PARAMS = {"text", "instructions"}
 
 
 def main() -> None:
@@ -39,8 +39,8 @@ def main() -> None:
         "input": params["text"],
         "response_format": "mp3",
     }
-    if config.get("instructions"):
-        request_body["instructions"] = config["instructions"]
+    if params.get("instructions"):
+        request_body["instructions"] = params["instructions"]
 
     response = requests.post(
         "https://api.openai.com/v1/audio/speech",
